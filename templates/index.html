@@ -34,7 +34,7 @@
     {% for marker in markers %}
       var popupContent = document.createElement('div');
       popupContent.innerHTML = `
-        <h3>{{ marker['name'] }}</h3>
+        <center><h3><a href="/landmark/{{ marker['name'].lower().replace(" ", "-") }}">{{ marker['name'] }}</a></h3></center>
         <center><img src="{{ url_for('static', filename='images/' + marker['name'].lower().replace(" ", "-") + '.jpg') }}" alt="{{ marker['name'] }}" style="max-width: 200px; height: auto;"></center>
         <p>{{ marker['description'] }}</p>
       `;
